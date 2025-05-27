@@ -1,0 +1,15 @@
+from haikiri.mikbill.cabinet.user.User import User
+
+
+class UserController:
+
+    def __init__(self, billing_interface):
+        self.interface = billing_interface
+
+    def get_user(self) -> User:
+        response = self.interface.send_request(
+            uri="/api/v1/cabinet/user",
+            method="POST",
+            token=self.interface.get_token(),
+        )
+        return User(response)
