@@ -10,7 +10,7 @@ class UserController:
     def get_user(self) -> User:
         response = self.interface.send_request(
             uri="/api/v1/cabinet/user",
-            method="POST",
-            token=self.interface.get_token(),
+            method="GET",
+            token=self.interface.get_user_token(),
         )
         return User(response)
