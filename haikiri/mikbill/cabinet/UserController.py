@@ -1,10 +1,11 @@
+from haikiri.mikbill.request_abstract import RequestAbstract
 from haikiri.mikbill.cabinet.user.User import User
 
 
 class UserController:
 
-    def __init__(self, billing_interface):
-        self.interface = billing_interface
+    def __init__(self, interface: RequestAbstract):
+        self.interface = interface
 
     def get_user(self) -> User:
         response = self.interface.send_request(

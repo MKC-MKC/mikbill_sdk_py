@@ -1,10 +1,11 @@
+from haikiri.mikbill.request_abstract import RequestAbstract
 from haikiri.mikbill.billing.users.Search import Search
 
 
 class UsersController:
 
-    def __init__(self, billing_interface):
-        self.interface = billing_interface
+    def __init__(self, interface: RequestAbstract):
+        self.interface = interface
 
     def search_user(self, key="uid", value="1", operator="="):
         params = {

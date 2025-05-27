@@ -35,5 +35,5 @@ class RequestAbstract(ABC):
         return result
 
     @abstractmethod
-    def send_request(self, uri: str, method: str, params: dict, sign: bool, token: Optional[str]):
+    def send_request(self, uri: str, method: str = "POST", params: dict = None, sign: bool = False, token: Optional[str] = None):
         pass
