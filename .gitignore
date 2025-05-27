@@ -1,6 +1,8 @@
 # Project
 *.lock
 vendor
+
+*.pyc
 .venv
 PyCharmMiscProject.iml
 
