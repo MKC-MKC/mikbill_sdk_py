@@ -28,7 +28,6 @@ class UsersController:
 
         response = self.interface.send_request(
             uri="/api/v1/billing/users/token",
-            method="POST",
             params=params,
             sign=True,
         )
