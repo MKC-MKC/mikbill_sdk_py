@@ -1,9 +1,6 @@
 import json
-
 from typing import Optional
 from abc import ABC, abstractmethod
-from haikiri.mikbill.billing import Billing
-from haikiri.mikbill.cabinet import Cabinet
 
 
 class RequestAbstract(ABC):
@@ -13,6 +10,9 @@ class RequestAbstract(ABC):
         self.key = key
         self.debug = debug
         self.user_token: Optional[str] = None
+
+        from haikiri.mikbill.billing import Billing
+        from haikiri.mikbill.cabinet import Cabinet
 
         self.billing = Billing(self)
         self.cabinet = Cabinet(self)
